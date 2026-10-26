@@ -1,0 +1,173 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Readex Pro", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-glow-1: var(--glow-1);
+  --color-glow-2: var(--glow-2);
+  --color-glow-3: var(--glow-3);
+  --color-surface: var(--surface);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Dark is the signature look; .light switches to the paper theme */
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.16 0.012 40);
+  --foreground: oklch(0.96 0.01 70);
+  --card: oklch(0.2 0.014 40);
+  --card-foreground: oklch(0.96 0.01 70);
+  --popover: oklch(0.21 0.014 40);
+  --popover-foreground: oklch(0.96 0.01 70);
+  --surface: oklch(0.185 0.013 40);
+  --primary: oklch(0.72 0.17 45);
+  --primary-foreground: oklch(0.16 0.02 40);
+  --secondary: oklch(0.26 0.015 40);
+  --secondary-foreground: oklch(0.96 0.01 70);
+  --muted: oklch(0.24 0.012 40);
+  --muted-foreground: oklch(0.7 0.02 60);
+  --accent: oklch(0.28 0.02 40);
+  --accent-foreground: oklch(0.96 0.01 70);
+  --destructive: oklch(0.63 0.21 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.72 0.17 45);
+  --glow-1: oklch(0.7 0.2 35);
+  --glow-2: oklch(0.8 0.15 75);
+  --glow-3: oklch(0.6 0.2 355);
+  --gradient-brand: linear-gradient(120deg, var(--glow-3), var(--glow-1) 45%, var(--glow-2));
+  --gradient-hero: radial-gradient(60% 50% at 50% 100%, color-mix(in oklab, var(--glow-1) 55%, transparent), transparent 70%),
+    radial-gradient(40% 40% at 20% 80%, color-mix(in oklab, var(--glow-3) 45%, transparent), transparent 70%),
+    radial-gradient(40% 40% at 80% 85%, color-mix(in oklab, var(--glow-2) 40%, transparent), transparent 70%);
+  --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--glow-1) 55%, transparent);
+  --chart-1: oklch(0.72 0.17 45);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.18 0.012 40);
+  --sidebar-foreground: oklch(0.96 0.01 70);
+  --sidebar-primary: oklch(0.72 0.17 45);
+  --sidebar-primary-foreground: oklch(0.16 0.02 40);
+  --sidebar-accent: oklch(0.26 0.015 40);
+  --sidebar-accent-foreground: oklch(0.96 0.01 70);
+  --sidebar-border: oklch(1 0 0 / 9%);
+  --sidebar-ring: oklch(0.72 0.17 45);
+}
+
+.light {
+  --background: oklch(0.985 0.006 80);
+  --foreground: oklch(0.2 0.02 40);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.02 40);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 40);
+  --surface: oklch(0.97 0.008 80);
+  --primary: oklch(0.62 0.19 40);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.94 0.01 80);
+  --secondary-foreground: oklch(0.2 0.02 40);
+  --muted: oklch(0.95 0.008 80);
+  --muted-foreground: oklch(0.48 0.02 50);
+  --accent: oklch(0.93 0.015 70);
+  --accent-foreground: oklch(0.2 0.02 40);
+  --border: oklch(0.2 0.02 40 / 10%);
+  --input: oklch(0.2 0.02 40 / 14%);
+  --sidebar: oklch(0.97 0.008 80);
+  --sidebar-foreground: oklch(0.2 0.02 40);
+  --sidebar-border: oklch(0.2 0.02 40 / 10%);
+  --sidebar-accent: oklch(0.93 0.015 70);
+  --sidebar-accent-foreground: oklch(0.2 0.02 40);
+}
+
+@utility text-gradient {
+  background-image: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-brand {
+  background-image: var(--gradient-brand);
+}
+
+@utility bg-hero {
+  background-image: var(--gradient-hero);
+}
+
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+.animate-float-slow { animation: float-slow 12s ease-in-out infinite; }
+
+@keyframes caret { 50% { opacity: 0; } }
+.animate-caret { animation: caret 1s steps(1) infinite; }
+
+.prose-chat p { margin: 0.25rem 0; }
+.prose-chat ul { list-style: disc; padding-inline-start: 1.25rem; margin: 0.25rem 0; }
+.prose-chat ol { list-style: decimal; padding-inline-start: 1.25rem; margin: 0.25rem 0; }
+.prose-chat h1, .prose-chat h2, .prose-chat h3 { font-weight: 600; margin: 0.5rem 0 0.25rem; }
+.prose-chat code { font-family: var(--font-mono); font-size: 0.85em; background: var(--secondary); padding: 0.1em 0.35em; border-radius: 0.3em; }
+.prose-chat strong { font-weight: 600; }
